@@ -1,0 +1,9 @@
+auto-save-list/*
+elpa/*
+projectile*
+history
+recentf
+.cask/*
+*.eld
+auto-save-list/*
+snipets/*
