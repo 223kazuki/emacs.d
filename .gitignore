@@ -7,3 +7,4 @@ recentf
 *.eld
 auto-save-list/*
 snipets/*
+nrepl-history
