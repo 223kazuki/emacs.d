@@ -17,6 +17,7 @@
 (setq visible-bell nil)
 (setq ring-bell-function 'ignore)
 (setq fast-but-imprecise-scrolling t)
+(set-default 'truncate-lines t)
 
 ;; Buffer settings
 (setq default-indicate-empty-lines t)
