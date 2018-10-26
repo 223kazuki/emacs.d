@@ -99,6 +99,7 @@
 
 (add-hook 'clojure-mode-hook 'prettify-symbols-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 (global-undo-tree-mode)
 
 (use-package paredit
@@ -177,7 +178,7 @@
   :mode (("\\.edn$" . clojure-mode))
   :config
   (progn
-    (setq clojure-align-forms-automatically t)
+    (setq clojure-align-forms-automatically nil)
 
     (define-clojure-indent
       (defroutes 'defun)
