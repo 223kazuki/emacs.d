@@ -155,7 +155,10 @@
     (diminish 'helm-mode)
     (global-set-key (kbd "M-x") 'helm-M-x)))
 
-(use-package helm-projectile)
+(use-package helm-projectile
+  :config
+  (progn
+    (global-set-key (kbd "C-x C-f") 'helm-projectile-find-file)))
 
 (use-package projectile
   :init (projectile-global-mode))
@@ -252,7 +255,7 @@
     (setq nrepl-hide-special-buffers t)
     (setq cider-popup-stacktraces-in-repl t)
     (setq cider-repl-history-file "~/.emacs.d/nrepl-history")
-    (setq cider-repl-pop-to-buffer-on-connect nil)
+    (setq cider-repl-pop-to-buffer-on-connect t)
     (setq cider-auto-select-error-buffer nil)
     (setq cider-prompt-save-file-on-load nil)
     (setq cider-repl-display-help-banner nil)
