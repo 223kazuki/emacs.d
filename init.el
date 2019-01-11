@@ -15,7 +15,6 @@
 (blink-cursor-mode 0)
 (menu-bar-mode 1)
 (setq visible-bell nil)
-(setq ring-bell-function 'ignore)
 (setq fast-but-imprecise-scrolling t)
 (set-default 'truncate-lines t)
 
@@ -78,7 +77,6 @@
     (eval-after-load "paredit" '(diminish 'paredit-mode " par"))
     (eval-after-load "company" '(diminish 'company-mode " cmp"))
     (eval-after-load "cider" '(diminish 'cider-mode " cid"))
-    (eval-after-load "typed-clojure-mode" '(diminish 'typed-clojure-mode " typ"))
     (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
     (eval-after-load "helm" '(diminish 'helm-mode))))
 
@@ -268,3 +266,5 @@
 (use-package clj-refactor
   :init
   (add-hook 'clojure-mode-hook (lambda () (clj-refactor-mode 1))))
+
+(use-package rustic)
