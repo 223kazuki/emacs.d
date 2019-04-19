@@ -14,8 +14,69 @@ cd ~/.emacs.d && make install
 
 ## Shortcuts
 
-* `Crl-c + Meta-j`: cider-jack-in-clj
-* `Crl-c + Meta-J`: cider-jack-in-cljs
-* `Crl-x + Ctl-e`: cider-eval-last-sexp
-* `Ctl-c + SPC`: clojure-align
+* `C-x /`: undo
+* `O-left/right`:  backward-word/forward-word
+* `C-home/end`: beginning-of-buffer/end-of-buffer
+* `O-backspace`: backward-kill-word
+* `C-x C-f`: find-file
+* `C-x h`: mark-whole-buffer
+* `C-z`: suspend -> restore with `fg`
 
+### Window
+
+* `C-x 2`: split-window-below
+* `C-x 3`: split-window-right
+* `C-x 1`: delete-other-windows
+* `C-x o`: other-window
+
+
+### Peredit
+
+* `C-right`: slurp
+* `C-left`: barf
+* `O-s`: splice
+* `O-up`: splice with delete children before cursor
+* `O-down`: splice with delete children after cursor
+* `O-r`: rise: splice with only last child	
+
+### Clojure mode
+
+* `Ctl-c SPC`: clojure-align
+
+### Cider
+https://github.com/clojure-emacs/cider/blob/master/doc/interactive_programming.md
+
+* `C-c O-j`: cider-jack-in-clj
+* `C-c O-J`: cider-jack-in-cljs
+* `C-x C-e`: cider-eval-last-sexp
+* `C-c C-v w`: cider-eval-last-sexp-and-replace
+* `C-c O-e`: cider-eval-last-sexp-to-repl
+* `C-C O-p`: cider-eval-last-sexp-to-repl
+* `C-c C-b`: cider-interrupt
+* `C-c C-k`: cider-load-buffer
+* `C-c C-u`: cider-undef
+* `C-c C-z`: cider-switch-to-repl-buffer
+* `O-.`: cider-find-var
+* `C-c C-d d`: cider-doc
+
+### Enlighten mode
+
+```M-x cider-enlighten-mode```
+
+### Debug
+
+put ```#break``` before target form
+
+### clj-refactor
+https://github.com/clojure-emacs/clj-refactor.el/wiki
+
+* `C-c r`: prefix
+* `ap`: Add project dependency: hot reload temporarily disabled due to make the middleware run with Java 10.
+* `cm`: Clean namespace form
+* `dk`: destructure keys
+* `il`: Introduce let: `C-g` to disable multi-cursor
+* `pf`: Promote function
+* `rf`: rename file or dir updating any affected files
+* `tf`: wrap in thread-first (->) and fully thread
+* `tl`: wrap in thread-last (->>) and fully thread
+* `ua`: Unwind all

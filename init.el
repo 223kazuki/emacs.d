@@ -265,6 +265,8 @@
 
 (use-package clj-refactor
   :init
-  (add-hook 'clojure-mode-hook (lambda () (clj-refactor-mode 1))))
+  (add-hook 'clojure-mode-hook (lambda () (clj-refactor-mode 1)))
+  :config
+  (cljr-add-keybindings-with-prefix "C-c r"))
 
 (use-package rustic)
