@@ -58,6 +58,8 @@ https://github.com/clojure-emacs/cider/blob/master/doc/interactive_programming.m
 * `C-c C-z`: cider-switch-to-repl-buffer
 * `O-.`: cider-find-var
 * `C-c C-d d`: cider-doc
+* `C-c C-s r`: sesman-restart: restart cider session.
+
 
 ### Enlighten mode
 
@@ -80,3 +82,4 @@ https://github.com/clojure-emacs/clj-refactor.el/wiki
 * `tf`: wrap in thread-first (->) and fully thread
 * `tl`: wrap in thread-last (->>) and fully thread
 * `ua`: Unwind all
+

@@ -8,3 +8,7 @@ recentf
 auto-save-list/*
 snipets/*
 nrepl-history
+backups/*
+.mc-lists.el
+ido.last
+transient/*
