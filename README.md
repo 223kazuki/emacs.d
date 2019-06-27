@@ -21,6 +21,8 @@ cd ~/.emacs.d && make install
 * `C-x C-f`: find-file
 * `C-x h`: mark-whole-buffer
 * `C-z`: suspend -> restore with `fg`
+* `M-!`: run command
+* `M-g g`: go to line
 
 ### Window
 
@@ -67,7 +69,7 @@ https://github.com/clojure-emacs/cider/blob/master/doc/interactive_programming.m
 
 ### Debug
 
-put ```#break``` before target form
+put `#break` before target form
 
 ### clj-refactor
 https://github.com/clojure-emacs/clj-refactor.el/wiki
@@ -82,4 +84,3 @@ https://github.com/clojure-emacs/clj-refactor.el/wiki
 * `tf`: wrap in thread-first (->) and fully thread
 * `tl`: wrap in thread-last (->>) and fully thread
 * `ua`: Unwind all
-
