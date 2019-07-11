@@ -61,7 +61,10 @@ https://github.com/clojure-emacs/cider/blob/master/doc/interactive_programming.m
 * `O-.`: cider-find-var
 * `C-c C-d d`: cider-doc
 * `C-c C-s r`: sesman-restart: restart cider session.
-
+* `C-c O-c`: cide connect to clj
+* `C-c C-v C-f e`: cider-pprint-eval-last-sexp
+* `C-c C-m`: cider-macroexpand-1
+* `C-c C-m`: cider-macroexpand-all
 
 ### Enlighten mode
 

@@ -53,47 +53,47 @@
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 
-;; Themes
+; ;; Themes
 
-(use-package neotree
-  :config
-  (progn
-    (setq neo-smart-open t)
-    (setq neo-window-fixed-size nil)))
+; (use-package neotree
+;   :config
+;   (progn
+;     (setq neo-smart-open t)
+;     (setq neo-window-fixed-size nil)))
 
-(use-package powerline)
+; (use-package powerline)
 
 (load-theme 'afternoon t)
 
-(use-package diminish
-  :config
-  (progn
-    (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
-    (eval-after-load "simple" '(diminish 'auto-fill-function))
-    (eval-after-load "eldoc" '(diminish 'eldoc-mode))
-    (eval-after-load "guide-key" '(diminish 'guide-key-mode))
-    (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
-    (eval-after-load "elisp-slime-nav" '(diminish 'elisp-slime-nav-mode " sln"))
-    (eval-after-load "paredit" '(diminish 'paredit-mode " par"))
-    (eval-after-load "company" '(diminish 'company-mode " cmp"))
-    (eval-after-load "cider" '(diminish 'cider-mode " cid"))
-    (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
-    (eval-after-load "helm" '(diminish 'helm-mode))))
+; (use-package diminish
+;   :config
+;   (progn
+;     (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
+;     (eval-after-load "simple" '(diminish 'auto-fill-function))
+;     (eval-after-load "eldoc" '(diminish 'eldoc-mode))
+;     (eval-after-load "guide-key" '(diminish 'guide-key-mode))
+;     (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
+;     (eval-after-load "elisp-slime-nav" '(diminish 'elisp-slime-nav-mode " sln"))
+;     (eval-after-load "paredit" '(diminish 'paredit-mode " par"))
+;     (eval-after-load "company" '(diminish 'company-mode " cmp"))
+;     (eval-after-load "cider" '(diminish 'cider-mode " cid"))
+;     (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
+;     (eval-after-load "helm" '(diminish 'helm-mode))))
 
-(eval-after-load "flyspell"
-  '(defun flyspell-mode (&optional arg)))
+; (eval-after-load "flyspell"
+;   '(defun flyspell-mode (&optional arg)))
 
-;;;; Global keybindings
+; ;;;; Global keybindings
 
-; (global-set-key (kbd "s-x") 'kill-region)
-; (global-set-key (kbd "s-c") 'kill-ring-save)
-; (global-set-key (kbd "s-v") 'yank)
-; (global-set-key (kbd "s-z") 'undo)
-; (global-set-key (kbd "s-s") 'save-buffer)
-; (global-set-key (kbd "s-w") 'delete-window)
-; (global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
+; ; (global-set-key (kbd "s-x") 'kill-region)
+; ; (global-set-key (kbd "s-c") 'kill-ring-save)
+; ; (global-set-key (kbd "s-v") 'yank)
+; ; (global-set-key (kbd "s-z") 'undo)
+; ; (global-set-key (kbd "s-s") 'save-buffer)
+; ; (global-set-key (kbd "s-w") 'delete-window)
+; ; (global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
 
-;;;; Modes
+; ;;;; Modes
 
 (add-hook 'clojure-mode-hook 'prettify-symbols-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -125,15 +125,15 @@
         (indent-according-to-mode)))
     (global-set-key "\t" 'indent-or-complete)))
 
-(use-package magit)
+; (use-package magit)
 
-(use-package guide-key
-  :init (guide-key-mode 1)
-  :config
-  (progn
-    (setq guide-key/idle-delay 1)
-    (setq guide-key/recursive-key-sequence-flag t)
-    (setq guide-key/popup-window-position 'bottom)))
+; (use-package guide-key
+;   :init (guide-key-mode 1)
+;   :config
+;   (progn
+;     (setq guide-key/idle-delay 1)
+;     (setq guide-key/recursive-key-sequence-flag t)
+;     (setq guide-key/popup-window-position 'bottom)))
 
 (use-package ido)
 
@@ -161,19 +161,19 @@
 (use-package projectile
   :init (projectile-global-mode))
 
-(use-package yasnippet
-  :init
-  (progn
-    (yas-global-mode 1)
-    (use-package clojure-snippets)))
+; (use-package yasnippet
+;   :init
+;   (progn
+;     (yas-global-mode 1)
+;     (use-package clojure-snippets)))
 
 (use-package yaml-mode
   :mode ("\\.yml$" . yaml-mode))
 
-(use-package markdown-mode
-  :mode (("\\.markdown$" . markdown-mode)
-         ("\\.md$" . markdown-mode))
-  :init (add-hook 'markdown-mode-hook 'auto-fill-mode))
+; (use-package markdown-mode
+;   :mode (("\\.markdown$" . markdown-mode)
+;          ("\\.md$" . markdown-mode))
+;   :init (add-hook 'markdown-mode-hook 'auto-fill-mode))
 
 (use-package clojure-mode
   :mode (("\\.edn$" . clojure-mode))
@@ -269,4 +269,4 @@
   :config
   (cljr-add-keybindings-with-prefix "C-c r"))
 
-(use-package rustic)
+; (use-package rustic)
