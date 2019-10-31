@@ -270,3 +270,9 @@
   (cljr-add-keybindings-with-prefix "C-c r"))
 
 ; (use-package rustic)
+
+(use-package multiple-cursors
+  :config
+  (progn
+    (global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
+    (global-set-key (kbd "C-c D") 'mc/mark-all-like-this)))

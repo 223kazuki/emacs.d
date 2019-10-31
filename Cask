@@ -46,3 +46,5 @@
 (depends-on "rustic")
 (depends-on "racer")
 (depends-on "lsp-mode")
+(depends-on "multiple-cursors")
+(depends-on "string-inflection")
