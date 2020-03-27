@@ -201,11 +201,11 @@
       (checking 2)
       (async 1))
 
-    (define-clojure-indent
-      (select 1)
-      (insert 1)
-      (update 1)
-      (delete 1))
+    ; (define-clojure-indent
+    ;   (select 1)
+    ;   (insert 1)
+    ;   (update 1)
+    ;   (delete 1))
 
     (define-clojure-indent
       (run* 1)
