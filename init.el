@@ -23,6 +23,10 @@
 (setq require-final-newline t)
 (setq show-trailing-whitespace t)
 
+(global-unset-key (kbd "C-d"))
+(global-unset-key (kbd "C-e"))
+(global-unset-key (kbd "C-p"))
+
 (use-package whitespace
   :config
   (progn
@@ -95,7 +99,7 @@
 
 ; ;;;; Modes
 
-(add-hook 'clojure-mode-hook 'prettify-symbols-mode)
+; (add-hook 'clojure-mode-hook 'prettify-symbols-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 (global-undo-tree-mode)
@@ -156,7 +160,13 @@
 (use-package helm-projectile
   :config
   (progn
-    (global-set-key (kbd "C-x C-f") 'helm-projectile-find-file)))
+    (defun helm-projectile-find-file-in-mono-repo ()
+      ""
+      ; (interactive)
+      (helm-projectile-find-file "a")
+      )
+
+    (global-set-key (kbd "C-p") 'helm-projectile-find-file-in-mono-repo)))
 
 (use-package projectile
   :init (projectile-global-mode))
@@ -226,9 +236,6 @@
     (define-clojure-indent
       (s/fdef 1))
 
-    (setq clojure--prettify-symbols-alist
-          '(("fn" . ?λ)))
-
     (defun toggle-nrepl-buffer ()
       "Toggle the nREPL REPL on and off"
       (interactive)
@@ -274,8 +281,8 @@
 (use-package multiple-cursors
   :config
   (progn
-    (global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
-    (global-set-key (kbd "C-c D") 'mc/mark-all-like-this)))
+    (global-set-key (kbd "C-e") 'mc/mark-next-like-this)
+    (global-set-key (kbd "C-S-e") 'mc/mark-all-like-this)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
