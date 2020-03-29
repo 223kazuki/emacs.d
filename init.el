@@ -162,11 +162,11 @@
   (progn
     (defun helm-projectile-find-file-in-mono-repo ()
       ""
-      ; (interactive)
-      (helm-projectile-find-file "a")
-      )
+      (interactive)
+      (helm-projectile-find-file))
 
-    (global-set-key (kbd "C-p") 'helm-projectile-find-file-in-mono-repo)))
+    (global-set-key (kbd "C-f") 'helm-projectile-find-file-in-mono-repo)
+    (global-set-key (kbd "C-a") 'helm-projectile-ag)))
 
 (use-package projectile
   :init (projectile-global-mode))
@@ -283,11 +283,23 @@
   (progn
     (global-set-key (kbd "C-e") 'mc/mark-next-like-this)
     (global-set-key (kbd "C-S-e") 'mc/mark-all-like-this)))
+
+(use-package helm-open-github
+  :config
+  (progn
+    (global-set-key (kbd "C-c o f") 'helm-open-github-from-file)
+    (global-set-key (kbd "C-c o c") 'helm-open-github-from-commit)
+    (global-set-key (kbd "C-c o i") 'helm-open-github-from-issues)
+    (global-set-key (kbd "C-c p p") 'helm-open-github-from-pull-requests)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (helm-ag yaml-mode wrap-region use-package undo-tree string-inflection smex smartparens rustic rainbow-mode rainbow-delimiters racer powerline paren-face neotree magit lsp-mode linum-relative ido-vertical-mode helm-projectile helm-open-github guide-key flx-ido expand-region eglot drag-stuff diminish company clojure-snippets clj-refactor cask better-defaults aggressive-indent ag afternoon-theme)))
  '(safe-local-variable-values (quote ((cider-shadow-cljs-default-options . "app")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

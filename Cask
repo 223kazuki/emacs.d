@@ -48,3 +48,5 @@
 (depends-on "lsp-mode")
 (depends-on "multiple-cursors")
 (depends-on "string-inflection")
+(depends-on "helm-open-github")
+(depends-on "helm-ag")
