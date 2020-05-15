@@ -284,8 +284,6 @@
     '(lambda ()
       (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
       (setq-default rustic-format-trigger 'on-save)
-      (setq rustic-lsp-server 'rust-analyzer)
-      
       (yas-minor-mode t)
       (rainbow-delimiters-mode t)
       (smartparens-mode t)
@@ -295,7 +293,9 @@
 
 (use-package quickrun
   :config
-  (global-set-key (kbd "<f5>") 'quickrun))
+  (progn
+    (global-set-key (kbd "<f5>") 'quickrun)
+    (setq quickrun-focus-p nil)))
 
 (use-package multiple-cursors
   :config
