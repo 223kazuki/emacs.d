@@ -282,6 +282,7 @@
   :config
   (add-hook 'rustic-mode-hook
     '(lambda ()
+      (setq rustic-lsp-server 'rust-analyzer)
       (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
       (setq-default rustic-format-trigger 'on-save)
       (yas-minor-mode t)
