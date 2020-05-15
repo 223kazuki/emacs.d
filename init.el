@@ -234,7 +234,7 @@
       (specify! 1))
 
     (define-clojure-indent
-      (s/fdef 1))
+      (s/fdef 3))
 
     (defun toggle-nrepl-buffer ()
       "Toggle the nREPL REPL on and off"
@@ -276,7 +276,26 @@
   :config
   (cljr-add-keybindings-with-prefix "C-c r"))
 
-; (use-package rustic)
+(use-package rustic
+  :mode (("\\.rs$" . rustic-mode))
+  :commands (rustic-mode)
+  :config
+  (add-hook 'rustic-mode-hook
+    '(lambda ()
+      (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
+      (setq-default rustic-format-trigger 'on-save)
+      (setq rustic-lsp-server 'rust-analyzer)
+      
+      (yas-minor-mode t)
+      (rainbow-delimiters-mode t)
+      (smartparens-mode t)
+      (paredit-mode t)
+      (dumb-jump-mode t)
+      (highlight-symbol-mode t))))
+
+(use-package quickrun
+  :config
+  (global-set-key (kbd "<f5>") 'quickrun))
 
 (use-package multiple-cursors
   :config
@@ -299,7 +318,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-ag yaml-mode wrap-region use-package undo-tree string-inflection smex smartparens rustic rainbow-mode rainbow-delimiters racer powerline paren-face neotree magit lsp-mode linum-relative ido-vertical-mode helm-projectile helm-open-github guide-key flx-ido expand-region eglot drag-stuff diminish company clojure-snippets clj-refactor cask better-defaults aggressive-indent ag afternoon-theme)))
+    (highlight-symbol quickrun helm-ag yaml-mode wrap-region use-package undo-tree string-inflection smex smartparens rustic rainbow-mode rainbow-delimiters racer powerline paren-face neotree magit lsp-mode linum-relative ido-vertical-mode helm-projectile helm-open-github guide-key flx-ido expand-region eglot drag-stuff diminish company clojure-snippets clj-refactor cask better-defaults aggressive-indent ag afternoon-theme)))
  '(safe-local-variable-values (quote ((cider-shadow-cljs-default-options . "app")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
