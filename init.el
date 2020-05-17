@@ -296,6 +296,7 @@
   :config
   (progn
     (global-set-key (kbd "<f5>") 'quickrun)
+    (global-set-key (kbd "S-<f5>") 'quickrun-with-arg)
     (setq quickrun-focus-p nil)))
 
 (use-package multiple-cursors
