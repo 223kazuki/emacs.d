@@ -67,6 +67,7 @@
 
 ; (use-package powerline)
 
+(load-theme 'spacemacs-dark t)
 (load-theme 'afternoon t)
 
 ; (use-package diminish
@@ -99,7 +100,22 @@
 
 ; ;;;; Modes
 
-; (add-hook 'clojure-mode-hook 'prettify-symbols-mode)
+(use-package flycheck-joker :ensure t)
+(use-package flycheck-clj-kondo :ensure t)
+
+(dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+  (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
+
+(use-package flycheck :ensure t
+  :init (global-flycheck-mode)
+  :config
+  (setq
+    flycheck-display-errors-delay 1
+    flycheck-highlighting-mode 'lines
+    flycheck-check-syntax-automatically '(save))
+  (set-face-attribute 'flycheck-error nil :underline '(:color "red3" :style wave))
+  (set-face-attribute 'flycheck-warning nil :underline '(:color "orange2" :style wave)))
+
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
 (global-undo-tree-mode)
@@ -189,6 +205,7 @@
   :mode (("\\.edn$" . clojure-mode))
   :config
   (progn
+    (require 'flycheck-clj-kondo)
     (setq clojure-align-forms-automatically nil)
 
     (define-clojure-indent
@@ -318,9 +335,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("2593436c53c59d650c8e3b5337a45f0e1542b1ba46ce8956861316e860b145a0" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "454c1c9ce70f7d807c51c890910365fd3c64a9e63f596511e9ff57dd97bbeea8" "2540689fd0bc5d74c4682764ff6c94057ba8061a98be5dd21116bf7bf301acfb" default)))
  '(package-selected-packages
    (quote
-    (highlight-symbol quickrun helm-ag yaml-mode wrap-region use-package undo-tree string-inflection smex smartparens rustic rainbow-mode rainbow-delimiters racer powerline paren-face neotree magit lsp-mode linum-relative ido-vertical-mode helm-projectile helm-open-github guide-key flx-ido expand-region eglot drag-stuff diminish company clojure-snippets clj-refactor cask better-defaults aggressive-indent ag afternoon-theme)))
+    (dakrone-theme spacemacs-theme flycheck-color-mode-line eziam-theme flycheck-clj-kondo flycheck-pos-tip highlight-symbol quickrun helm-ag yaml-mode wrap-region use-package undo-tree string-inflection smex smartparens rustic rainbow-mode rainbow-delimiters racer powerline paren-face neotree magit lsp-mode linum-relative ido-vertical-mode helm-projectile helm-open-github guide-key flx-ido expand-region eglot drag-stuff diminish company clojure-snippets clj-refactor cask better-defaults aggressive-indent ag afternoon-theme)))
  '(safe-local-variable-values (quote ((cider-shadow-cljs-default-options . "app")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
