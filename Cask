@@ -53,3 +53,5 @@
 (depends-on "flycheck")
 (depends-on "flycheck-joker")
 (depends-on "flycheck-clj-kondo")
+(depends-on "afternoon-theme")
+(depends-on "spacemacs-theme")
