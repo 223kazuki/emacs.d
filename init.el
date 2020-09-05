@@ -285,7 +285,8 @@
     (setq cider-refresh-before-fn "reloaded.repl/suspend")
     (setq cider-refresh-after-fn "reloaded.repl/resume")
     (setq cider-cljs-lein-repl "(do (reloaded.repl/go) (user/cljs-repl))")
-    (setq cider-prompt-for-symbol nil)))
+    (setq cider-prompt-for-symbol nil)
+    (setq cider-test-defining-forms '("deftest" "defspec" "deftest+trace" "defspec+trace"))))
 
 (use-package clj-refactor
   :init
