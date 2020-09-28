@@ -294,21 +294,21 @@
   :config
   (cljr-add-keybindings-with-prefix "C-c r"))
 
-(use-package rustic
-  :mode (("\\.rs$" . rustic-mode))
-  :commands (rustic-mode)
-  :config
-  (add-hook 'rustic-mode-hook
-    '(lambda ()
-      (setq rustic-lsp-server 'rust-analyzer)
-      (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
-      (setq-default rustic-format-trigger 'on-save)
-      (yas-minor-mode t)
-      (rainbow-delimiters-mode t)
-      (smartparens-mode t)
-      (paredit-mode t)
-      (dumb-jump-mode t)
-      (highlight-symbol-mode t))))
+; (use-package rustic
+;   :mode (("\\.rs$" . rustic-mode))
+;   :commands (rustic-mode)
+;   :config
+;   (add-hook 'rustic-mode-hook
+;     '(lambda ()
+;       (setq rustic-lsp-server 'rust-analyzer)
+;       (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
+;       (setq-default rustic-format-trigger 'on-save)
+;       (yas-minor-mode t)
+;       (rainbow-delimiters-mode t)
+;       (smartparens-mode t)
+;       (paredit-mode t)
+;       (dumb-jump-mode t)
+;       (highlight-symbol-mode t))))
 
 (use-package quickrun
   :config
