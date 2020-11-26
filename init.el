@@ -1,6 +1,9 @@
 ;;;; Initialize
 
-(package-initialize)
+;; (package-initialize)
+(setq byte-compile-warnings '(not cl-functions obsolete))
+(setq package-enable-at-startup nil)
+
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 (require 'use-package)
@@ -226,7 +229,9 @@
       (match 1)
       (are 2)
       ; (checking 2)
-      (async 1))
+      (async 1)
+      (setup/run -1)
+      (it.setup/run -1))
 
     ; (define-clojure-indent
     ;   (select 1)
@@ -286,7 +291,7 @@
     (setq cider-refresh-after-fn "reloaded.repl/resume")
     (setq cider-cljs-lein-repl "(do (reloaded.repl/go) (user/cljs-repl))")
     (setq cider-prompt-for-symbol nil)
-    (setq cider-test-defining-forms '("deftest" "defspec" "deftest+trace" "defspec+trace"))))
+    (setq cider-test-defining-forms '("deftest" "defspec" "deftest+trace" "defspec+trace" "def-market-state-test"))))
 
 (use-package clj-refactor
   :init
