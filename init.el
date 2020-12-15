@@ -30,6 +30,8 @@
 (global-unset-key (kbd "C-e"))
 (global-unset-key (kbd "C-p"))
 
+(global-display-line-numbers-mode)
+
 (use-package whitespace
   :config
   (progn
