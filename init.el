@@ -4,7 +4,7 @@
 (setq byte-compile-warnings '(not cl-functions obsolete))
 (setq package-enable-at-startup nil)
 
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'use-package)
 (use-package better-defaults)
