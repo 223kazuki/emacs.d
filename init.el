@@ -1,8 +1,8 @@
 ;;;; Initialize
 
-;; (package-initialize)
 (setq byte-compile-warnings '(not cl-functions obsolete))
 (setq package-enable-at-startup nil)
+(setq warning-suppress-log-types '((package reinitialization)))
 
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
@@ -259,6 +259,9 @@
 
     (define-clojure-indent
       (s/fdef 3))
+
+    (define-clojure-indent
+      (cond-> 1))
 
     (defun toggle-nrepl-buffer ()
       "Toggle the nREPL REPL on and off"
