@@ -27,6 +27,7 @@
 (setq show-trailing-whitespace t)
 
 (delete-selection-mode t)
+(setq shell-file-name "/bin/sh")
 
 (global-unset-key (kbd "C-d"))
 (global-unset-key (kbd "C-e"))
