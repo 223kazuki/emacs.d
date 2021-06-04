@@ -11,8 +11,8 @@
 
 ;;;; Editor
 
-(when (window-system)
-  (set-default-font "Fira Code"))
+; (when (window-system)
+;   (set-default-font "Fira Code"))
 
 (setq inhibit-startup-message t)
 (blink-cursor-mode 0)
@@ -25,6 +25,8 @@
 (setq default-indicate-empty-lines t)
 (setq require-final-newline t)
 (setq show-trailing-whitespace t)
+
+(delete-selection-mode t)
 
 (global-unset-key (kbd "C-d"))
 (global-unset-key (kbd "C-e"))
