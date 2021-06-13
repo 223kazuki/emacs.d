@@ -33,6 +33,11 @@
 (global-unset-key (kbd "C-e"))
 (global-unset-key (kbd "C-p"))
 
+
+
+;; consult
+(setq consult-find-command "fd --color=never --full-path ARG OPTS")
+
 (global-display-line-numbers-mode)
 
 (use-package whitespace
@@ -343,6 +348,19 @@
     (global-set-key (kbd "C-c o c") 'helm-open-github-from-commit)
     (global-set-key (kbd "C-c o i") 'helm-open-github-from-issues)
     (global-set-key (kbd "C-c p p") 'helm-open-github-from-pull-requests)))
+
+(use-package vertico
+  :init
+  (vertico-mode)
+
+  ;; Optionally enable cycling for `vertico-next', `vertico-previous',
+  ;; `vertico-next-group' and `vertico-previous-group'.
+  ;; (setq vertico-cycle t)
+)
+
+(use-package consult
+  :config
+  (global-set-key (kbd "C-s") 'consult-line))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

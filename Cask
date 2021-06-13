@@ -55,3 +55,6 @@
 (depends-on "flycheck-clj-kondo")
 (depends-on "afternoon-theme")
 (depends-on "spacemacs-theme")
+(depends-on "consult")
+(depends-on "consult-ghq")
+(depends-on "vertico")
