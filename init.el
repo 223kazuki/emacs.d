@@ -177,14 +177,14 @@
 (use-package ido-vertical-mode
   :init (ido-vertical-mode 1))
 
-(use-package helm
-  :config
-  (progn
-    (helm-mode 1)
-    (setq helm-autoresize-mode t)
-    (setq helm-buffer-max-length 40)
-    (diminish 'helm-mode)
-    (global-set-key (kbd "M-x") 'helm-M-x)))
+; (use-package helm
+;   :config
+;   (progn
+;     (helm-mode 1)
+;     (setq helm-autoresize-mode t)
+;     (setq helm-buffer-max-length 40)
+;     (diminish 'helm-mode)
+;     (global-set-key (kbd "M-x") 'helm-M-x)))
 
 (use-package helm-projectile
   :config
@@ -358,9 +358,46 @@
   ;; (setq vertico-cycle t)
 )
 
-(use-package consult
-  :config
-  (global-set-key (kbd "C-s") 'consult-line))
+;; 補完スタイルにorderlessを利用する
+(with-eval-after-load 'orderless
+  (setq completion-styles '(orderless)))
+
+;; 補完候補を最大20行まで表示する
+(setq vertico-count 20)
+
+;; vertico-modeとmarginalia-modeを有効化する
+(defun after-init-hook ()
+  (vertico-mode)
+  (marginalia-mode)
+  ;; savehist-modeを使ってVerticoの順番を永続化する
+  (savehist-mode))
+
+(add-hook 'after-init-hook #'after-init-hook)
+
+;; embark-consultを読み込む
+(with-eval-after-load 'consult
+  (with-eval-after-load 'embark
+    (require 'embark-consult)))
+
+;; C-uを付けるとカーソル位置の文字列を使うmy-consult-lineコマンドを定義する
+(defun my-consult-line (&optional at-point)
+  "Consult-line uses things-at-point if set C-u prefix."
+  (interactive "P")
+  (if at-point
+      (consult-line (thing-at-point 'symbol))
+    (consult-line)))
+
+;; C-s（isearch-forward）をmy-consult-lineコマンドに割り当てる
+(global-set-key (kbd "C-s") 'my-consult-line)
+
+;; C-s/C-rで行を移動できるようにする
+(with-eval-after-load 'vertico
+  (define-key vertico-map (kbd "C-r") 'vertico-previous)
+  (define-key vertico-map (kbd "C-s") 'vertico-next))
+
+(with-eval-after-load 'vertico
+  (define-key vertico-map (kbd "C-r") 'vertico-previous)
+  (define-key vertico-map (kbd "C-s") 'vertico-next))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -58,3 +58,9 @@
 (depends-on "consult")
 (depends-on "consult-ghq")
 (depends-on "vertico")
+(depends-on "marginalia")
+(depends-on "orderless")
+(depends-on "savehist")
+(depends-on "embark")
+(depends-on "embark-consult")
+
