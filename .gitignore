@@ -12,3 +12,6 @@ backups/*
 .mc-lists.el
 ido.last
 transient/*
+*.log
+custom.el
+places
