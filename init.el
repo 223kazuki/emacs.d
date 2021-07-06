@@ -360,7 +360,7 @@
 
 ;; 補完スタイルにorderlessを利用する
 (with-eval-after-load 'orderless
-  (setq completion-styles '(orderless)))
+  (setq completion-styles '(orderless basic)))
 
 ;; 補完候補を最大20行まで表示する
 (setq vertico-count 20)
