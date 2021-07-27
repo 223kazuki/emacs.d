@@ -94,8 +94,7 @@
 
 ; (use-package powerline)
 
-(load-theme 'spacemacs-dark t)
-(load-theme 'afternoon t)
+(load-theme 'planet t)
 
 ; (use-package diminish
 ;   :config

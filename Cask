@@ -63,4 +63,5 @@
 (depends-on "savehist")
 (depends-on "embark")
 (depends-on "embark-consult")
+(depends-on "planet-theme")
 
