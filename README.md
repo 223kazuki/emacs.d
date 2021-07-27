@@ -32,6 +32,8 @@ cd ~/.emacs.d && make install
 * `C-t`: er/expand-region
 * `M-n`: highlight-symbol-next
 * `M-p`: highlight-symbol-previous
+* `C-s`: consult-line
+* `M-g`: consult-goto-line
 
 ### Window
 

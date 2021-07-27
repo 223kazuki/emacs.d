@@ -409,6 +409,8 @@
   (define-key vertico-map (kbd "C-r") 'vertico-previous)
   (define-key vertico-map (kbd "C-s") 'vertico-next))
 
+(global-set-key (kbd "M-g") 'consult-goto-line)
+
 (with-eval-after-load 'vertico
   (define-key vertico-map (kbd "C-r") 'vertico-previous)
   (define-key vertico-map (kbd "C-s") 'vertico-next))
