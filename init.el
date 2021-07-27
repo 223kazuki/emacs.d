@@ -32,8 +32,22 @@
 (global-unset-key (kbd "C-d"))
 (global-unset-key (kbd "C-e"))
 (global-unset-key (kbd "C-p"))
+(global-unset-key (kbd "C-t"))
 
+(use-package expand-region :ensure t
+  :config
+  (progn
+   (global-set-key (kbd "C-t") 'er/expand-region)))
 
+(use-package highlight-symbol :ensure t
+  :config
+  (set-face-attribute 'highlight-symbol-face nil
+                      :background "default"
+                      :foreground "#FA009A")
+  (setq highlight-symbol-idle-delay 0)
+  (setq highlight-symbol-on-navigation-p t)
+  (add-hook 'prog-mode-hook #'highlight-symbol-mode)
+  (add-hook 'prog-mode-hook #'highlight-symbol-nav-mode))
 
 ;; consult
 (setq consult-find-command "fd --color=never --full-path ARG OPTS")

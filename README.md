@@ -23,12 +23,15 @@ cd ~/.emacs.d && make install
 * `C-z`: suspend -> restore with `fg`
 * `M-!`: run command
 * `M-g g`: go to line
-* `C-f` helm-projectile-find-file-in-mono-repo
+* `C-f` helm-projectile-fd
 * `C-a` helm-projectile-ag
 * `C-c o f`: helm-open-github-from-file
 * `C-c o c`: helm-open-github-from-commit
 * `C-c o i`: helm-open-github-from-issues
 * `C-c p p`: helm-open-github-from-pull-requests
+* `C-t`: er/expand-region
+* `M-n`: highlight-symbol-next
+* `M-p`: highlight-symbol-previous
 
 ### Window
 
