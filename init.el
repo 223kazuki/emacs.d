@@ -61,6 +61,7 @@
 (setq consult-find-command "fd --color=never --full-path ARG OPTS")
 
 (global-display-line-numbers-mode)
+(global-hl-line-mode)
 
 (use-package whitespace
   :config
