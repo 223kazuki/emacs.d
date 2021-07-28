@@ -30,10 +30,11 @@ cd ~/.emacs.d && make install
 * `C-c o i`: helm-open-github-from-issues
 * `C-c p p`: helm-open-github-from-pull-requests
 * `C-t`: er/expand-region
-* `M-n`: highlight-symbol-next
-* `M-p`: highlight-symbol-previous
+* `C-n`: highlight-symbol-next
+* `C-p`: highlight-symbol-previous
 * `C-s`: consult-line
 * `M-g`: consult-goto-line
+* `C-h`: yas-insert-snippet
 
 ### Window
 

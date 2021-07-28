@@ -33,6 +33,12 @@
 (global-unset-key (kbd "C-e"))
 (global-unset-key (kbd "C-p"))
 (global-unset-key (kbd "C-t"))
+(global-unset-key (kbd "C-n"))
+(global-unset-key (kbd "C-r"))
+(global-unset-key (kbd "C-h"))
+
+(global-set-key (kbd "C-r") 'replace-regexp)
+; (global-set-key (kbd "C-h") 'highlight-symbol-prev)
 
 (use-package expand-region :ensure t
   :config
@@ -46,6 +52,8 @@
                       :foreground "#FA009A")
   (setq highlight-symbol-idle-delay 0)
   (setq highlight-symbol-on-navigation-p t)
+  (global-set-key (kbd "C-n") 'highlight-symbol-next)
+  (global-set-key (kbd "C-p") 'highlight-symbol-prev)
   (add-hook 'prog-mode-hook #'highlight-symbol-mode)
   (add-hook 'prog-mode-hook #'highlight-symbol-nav-mode))
 
@@ -213,11 +221,12 @@
 (use-package projectile
   :init (projectile-global-mode))
 
-; (use-package yasnippet
-;   :init
-;   (progn
-;     (yas-global-mode 1)
-;     (use-package clojure-snippets)))
+(use-package yasnippet
+  :init
+  (progn
+    (yas-global-mode 1)
+    (global-set-key (kbd "C-h") 'yas-insert-snippet)
+    (use-package clojure-snippets)))
 
 (use-package yaml-mode
   :mode ("\\.yml$" . yaml-mode))
