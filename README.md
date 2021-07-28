@@ -80,7 +80,7 @@ https://github.com/clojure-emacs/cider/blob/master/doc/interactive_programming.m
 
 ### Enlighten mode
 
-```M-x cider-enlighten-mode```
+`M-x cider-enlighten-mode`
 
 ### Debug
 
@@ -99,3 +99,9 @@ https://github.com/clojure-emacs/clj-refactor.el/wiki
 * `tf`: wrap in thread-first (->) and fully thread
 * `tl`: wrap in thread-last (->>) and fully thread
 * `ua`: Unwind all
+
+### dired
+https://github.com/jasonm23/emacs-cheat-sheets
+
+* `U`: unmarke all
+* `C-x C-f`: new file
