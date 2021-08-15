@@ -44,7 +44,7 @@ cd ~/.emacs.d && make install
 * `C-x o`: other-window
 
 
-### Peredit
+### Paredit
 
 * `C-right`: slurp
 * `C-left`: barf
