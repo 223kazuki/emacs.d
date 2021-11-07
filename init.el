@@ -402,6 +402,10 @@
   (with-eval-after-load 'embark
     (require 'embark-consult)))
 
+(use-package orderless
+  :ensure t
+  :custom (completion-styles '(orderless)))
+
 ;; C-uを付けるとカーソル位置の文字列を使うmy-consult-lineコマンドを定義する
 (defun my-consult-line (&optional at-point)
   "Consult-line uses things-at-point if set C-u prefix."
