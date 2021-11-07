@@ -51,7 +51,7 @@ cd ~/.emacs.d && make install
 * `O-s`: splice
 * `O-up`: splice with delete children before cursor
 * `O-down`: splice with delete children after cursor
-* `O-r`: rise: splice with only last child	
+* `O-r`: rise: splice with only last child ... ex. to use remove `try catch`
 
 ### Clojure mode
 
@@ -73,7 +73,8 @@ https://github.com/clojure-emacs/cider/blob/master/doc/interactive_programming.m
 * `O-.`: cider-find-var
 * `C-c C-d d`: cider-doc
 * `C-c C-s r`: sesman-restart: restart cider session.
-* `C-c O-c`: cide connect to clj
+* `C-c O-c`: cider connect to clj
+* `C-c C-v C-f e`: cider-pprint-eval-last-sexp
 * `C-c C-v C-f e`: cider-pprint-eval-last-sexp
 * `C-c C-m`: cider-macroexpand-1
 * `C-c C-m`: cider-macroexpand-all
