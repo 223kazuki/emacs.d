@@ -15,3 +15,5 @@ transient/*
 *.log
 custom.el
 places
+eln-cache/*
+bookmarks
