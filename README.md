@@ -3,18 +3,22 @@
 ## Requirements
 
 * Emacs 26 or higher.
-* Cask
+* Cask 0.8.8 (or maybe higher)
+
+```sh
+brew install cask
+```
 
 ## Installation
 
-```
+```sh
 git clone --depth=1 git@github.com:223kazuki/emacs.d.git ~/.emacs.d
 cd ~/.emacs.d && make install
 ```
 
 or
 
-```
+```sh
 ln -s `pwd`/emacs.d $HOME/.emacs.d 
 # For fish
 # ln -s (pwd(/emacs.d $HOME/.emacs.d

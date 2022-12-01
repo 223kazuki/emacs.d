@@ -4,7 +4,8 @@
 (setq package-enable-at-startup nil)
 (setq warning-suppress-log-types '((package reinitialization)))
 
-(require 'cask "~/.cask/cask.el")
+(add-to-list 'load-path "~/.cask/cask.el")
+(require 'cask)
 (cask-initialize)
 (require 'use-package)
 (use-package better-defaults)

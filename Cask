@@ -1,7 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "cask")
 (depends-on "use-package")
 (depends-on "dash")
 (depends-on "drag-stuff")
