@@ -12,6 +12,14 @@ git clone --depth=1 git@github.com:223kazuki/emacs.d.git ~/.emacs.d
 cd ~/.emacs.d && make install
 ```
 
+or
+
+```
+ln -s `pwd`/emacs.d $HOME/.emacs.d 
+# For fish
+# ln -s (pwd(/emacs.d $HOME/.emacs.d
+```
+
 ## Shortcuts
 
 * `C-x /`: undo
