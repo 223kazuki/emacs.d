@@ -4,11 +4,52 @@
 (setq package-enable-at-startup nil)
 (setq warning-suppress-log-types '((package reinitialization)))
 
-(add-to-list 'load-path "~/.cask/cask.el")
-(require 'cask)
-(cask-initialize)
-(require 'use-package)
+;; straight.el のインストール
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+
+(use-package afternoon-theme)
+(use-package ag)
+(use-package aggressive-indent)
 (use-package better-defaults)
+(use-package embark-consult)
+(use-package consult)
+(use-package consult-ghq)
+(use-package dash)
+(use-package drag-stuff)
+(use-package eglot)
+(use-package embark)
+(use-package helm-ag)
+(use-package linum-relative)
+(use-package lsp-mode)
+(use-package marginalia)
+(use-package markdown-mode)
+(use-package planet-theme)
+(use-package popwin)
+(use-package rainbow-delimiters)
+(use-package rainbow-mode)
+(use-package rustic)
+(use-package s)
+(use-package savehist)
+(use-package smartparens)
+(use-package smex)
+(use-package spacemacs-theme)
+(use-package string-inflection)
+(use-package undo-tree)
+(use-package wrap-region)
 
 ;;;; Editor
 
@@ -40,6 +81,7 @@
 
 (global-set-key (kbd "C-r") 'replace-regexp)
 ; (global-set-key (kbd "C-h") 'highlight-symbol-prev)
+
 
 (use-package expand-region :ensure t
   :config
@@ -233,11 +275,6 @@
 (use-package yaml-mode
   :mode ("\\.yml$" . yaml-mode))
 
-; (use-package markdown-mode
-;   :mode (("\\.markdown$" . markdown-mode)
-;          ("\\.md$" . markdown-mode))
-;   :init (add-hook 'markdown-mode-hook 'auto-fill-mode))
-
 (use-package clojure-mode
   :mode (("\\.edn$" . clojure-mode))
   :config
@@ -330,27 +367,14 @@
     (setq cider-prompt-for-symbol nil)
     (setq cider-test-defining-forms '("deftest" "defspec" "deftest+trace" "defspec+trace" "def-market-state-test"))))
 
+(define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
+(define-key cider-repl-mode-map (kbd "M-RET") #'cider-repl-return)
+
 (use-package clj-refactor
   :init
   (add-hook 'clojure-mode-hook (lambda () (clj-refactor-mode 1)))
   :config
   (cljr-add-keybindings-with-prefix "C-c r"))
-
-; (use-package rustic
-;   :mode (("\\.rs$" . rustic-mode))
-;   :commands (rustic-mode)
-;   :config
-;   (add-hook 'rustic-mode-hook
-;     '(lambda ()
-;       (setq rustic-lsp-server 'rust-analyzer)
-;       (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
-;       (setq-default rustic-format-trigger 'on-save)
-;       (yas-minor-mode t)
-;       (rainbow-delimiters-mode t)
-;       (smartparens-mode t)
-;       (paredit-mode t)
-;       (dumb-jump-mode t)
-;       (highlight-symbol-mode t))))
 
 (use-package quickrun
   :config
@@ -365,13 +389,13 @@
     (global-set-key (kbd "C-e") 'mc/mark-next-like-this)
     (global-set-key (kbd "C-S-e") 'mc/mark-all-like-this)))
 
-(use-package helm-open-github
-  :config
-  (progn
-    (global-set-key (kbd "C-c o f") 'helm-open-github-from-file)
-    (global-set-key (kbd "C-c o c") 'helm-open-github-from-commit)
-    (global-set-key (kbd "C-c o i") 'helm-open-github-from-issues)
-    (global-set-key (kbd "C-c p p") 'helm-open-github-from-pull-requests)))
+; (use-package helm-open-github
+;   :config
+;   (progn
+;     (global-set-key (kbd "C-c o f") 'helm-open-github-from-file)
+;     (global-set-key (kbd "C-c o c") 'helm-open-github-from-commit)
+;     (global-set-key (kbd "C-c o i") 'helm-open-github-from-issues)
+;     (global-set-key (kbd "C-c p p") 'helm-open-github-from-pull-requests)))
 
 (use-package vertico
   :init
